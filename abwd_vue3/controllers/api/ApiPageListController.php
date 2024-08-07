@@ -302,8 +302,8 @@ class ApiPageListController
 
         return new JsonResponse([
             'results'=>$pageProps,
-            'total_pages'=>$totalPages,
-            'current_page'=>$currentPage
+            'total_pages'=>intval($totalPages),
+            'current_page'=>intval($currentPage)
         ]);
     }
 
