@@ -18538,6 +18538,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   __name: 'PageList',
   props: {
+    blockId: String,
     title: String,
     titleFormat: String,
     rssUrl: String,
@@ -18549,7 +18550,6 @@ __webpack_require__.r(__webpack_exports__);
     noResultsMessage: String,
     emptyBlockMessage: String,
     displayEmptyMessage: Boolean,
-    pages: String,
     showPagination: Boolean,
     buttonLinkText: String
   },
@@ -18557,17 +18557,27 @@ __webpack_require__.r(__webpack_exports__);
     var __expose = _ref.expose;
     __expose();
     var props = __props;
-    var pages = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
-      return JSON.parse(props.pages);
-    });
+    var pages = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
     var pageListTitle = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return '<' + props.titleFormat + '>' + props.title + '</' + props.titleFormat + '>';
+    });
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      pages.value = null;
+      fetch('/api/page_list/' + props.blockId).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        return pages.value = data.results;
+      })["catch"](function (error) {
+        return console.error(error.message);
+      });
     });
     var __returned__ = {
       props: props,
       pages: pages,
       pageListTitle: pageListTitle,
-      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -18664,7 +18674,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.emptyBlockMessage)
   }, null, 8 /* PROPS */, _hoisted_1)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [$setup.pages.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [$setup.props.title ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+  }, [$setup.pages && $setup.pages.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [$setup.props.title ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     key: 0,
     "class": "ccm-block-page-list-header",
     innerHTML: $setup.pageListTitle

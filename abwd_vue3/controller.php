@@ -14,6 +14,7 @@ use AssetList;
 use BlockType;
 use Package;
 use SinglePage;
+use AbwdVue3\RouteList;
 
 class Controller extends Package
 {
@@ -31,6 +32,10 @@ class Controller extends Package
     {
         return t('ABWD Vue 3');
     }
+
+    protected $pkgAutoloaderRegistries = [
+        'src/' => 'AbwdVue3'
+    ];
 
     private function installOrUpgrade($pkg = null){
         if(is_null($pkg)) $pkg = Package::getByHandle('abwd_vue3');
@@ -89,7 +94,12 @@ class Controller extends Package
             array('css','abwd-vue3')
         ));
 
-        // Register API routes?
+
+        // Register our API Routes
+        $router = $this->app->make('router');
+        $list = new RouteList();
+        $list->loadRoutes($router);
+
     }
 
     /**

@@ -1,7 +1,8 @@
 <script setup>
-    import { computed } from 'vue';
+    import { computed, onMounted, ref } from 'vue';
 
     const props = defineProps({
+        blockId: String,
         title: String,
         titleFormat: String,
         rssUrl: String,
@@ -13,14 +14,21 @@
         noResultsMessage: String,
         emptyBlockMessage: String,
         displayEmptyMessage: Boolean,
-        pages: String,
         showPagination: Boolean,
         buttonLinkText: String
     })
 
-    const pages = computed(()=>{return JSON.parse(props.pages)})
+    const pages = ref(null)
     const pageListTitle = computed(() => {
         return '<'+props.titleFormat+'>'+props.title+'</'+props.titleFormat+'>'
+    })
+
+    onMounted(() => {
+        pages.value = null
+        fetch('/api/page_list/'+props.blockId)
+        .then((res) => (res.json()))
+        .then((data) => (pages.value = data.results))
+        .catch((error) => (console.error(error.message)))
     })
 
 </script>
@@ -28,7 +36,7 @@
     <div v-if="props.displayEmptyMessage" class="ccm-edit-mode-disabled-item" v-text="emptyBlockMessage"></div>
 
     <template v-else>
-        <div v-if="pages.length > 0" class="ccm-block-page-list-wrapper">
+        <div v-if="pages && pages.length > 0" class="ccm-block-page-list-wrapper">
             <div v-if="props.title" class="ccm-block-page-list-header" v-html="pageListTitle"></div>
             <a v-if="props.rssUrl" :href="props.rssUrl" target="_blank" class="ccm-block-page-list-rss-feed">
                 <i class="fas fa-rss"></i>
