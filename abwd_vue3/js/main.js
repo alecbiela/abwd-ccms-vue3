@@ -18563,6 +18563,7 @@ __webpack_require__.r(__webpack_exports__);
       fetch("/api/example?uID=".concat(userID)).then(function (res) {
         return res.json();
       }).then(function (data) {
+        ;
         userData.user_name = data.name, userData.user_id = data.id, userData.found = data.found;
       })["catch"](function (error) {
         return console.error(error.message);
@@ -18715,7 +18716,7 @@ var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
   }, "Try this User ID", -1 /* HOISTED */);
 });
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, "Hello world from inside the example block SFC! This block's ID is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.blockId) + ". We are styling this paragraph inside the SFC.", 1 /* TEXT */), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Count is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.count), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, " Hello world from inside the example block SFC! This block's ID is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.blockId) + ". We are styling this paragraph inside the SFC. ", 1 /* TEXT */), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Count is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.count), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.count++;
     })
@@ -18723,7 +18724,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.count = 0;
     })
-  }, "Reset"), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Could also use :class to dynamically use CSS for a loading indicator or something... "), $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [].concat(_hoisted_7))) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "User Name: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userData.user_name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "User ID: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userData.user_id), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Found from Query String: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userData.found ? 'Yes, user ID matches query string' : 'No, using current logged in user'), 1 /* TEXT */)])), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  }, "Reset"), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Could also use :class to dynamically use CSS for a loading indicator or something... "), $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [].concat(_hoisted_7))) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "User Name: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userData.user_name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "User ID: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userData.user_id), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Found from Query String: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.userData.found ? 'Yes, user ID matches query string' : 'No, using current logged in user'), 1 /* TEXT */)])), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $setup.getData($setup.inputUserID);
     }, ["prevent"]))
@@ -18884,8 +18885,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8 /* PROPS */, _hoisted_16)), $setup.props.showPagination ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'page-item': true,
-      'prev': true,
-      'disabled': $setup.currentPage == 1
+      prev: true,
+      disabled: $setup.currentPage == 1
     })
   }, [$setup.currentPage == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Previous")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
@@ -18893,11 +18894,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.getPages($setup.currentPage - 1);
     })
-  }, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Previous")]))], 2 /* CLASS */), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.totalPages, function (n) {
+  }, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Previous ")]))], 2 /* CLASS */), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.totalPages, function (n) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
         'page-item': true,
-        'active': n == $setup.currentPage
+        active: n == $setup.currentPage
       })
     }, [n == $setup.currentPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(n) + " ", 1 /* TEXT */), n == $setup.currentPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_23, "(Current)")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
       key: 1,
@@ -18909,8 +18910,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'page-item': true,
-      'next': true,
-      'disabled': $setup.currentPage == $setup.totalPages
+      next: true,
+      disabled: $setup.currentPage == $setup.totalPages
     })
   }, [$setup.currentPage == $setup.totalPages ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Next "), _hoisted_26])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
@@ -18918,7 +18919,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.getPages($setup.currentPage + 1);
     })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Next "), _hoisted_27]))], 2 /* CLASS */)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */));
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Next "), _hoisted_27]))], 2 /* CLASS */)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */));
 }
 
 /***/ }),
@@ -18939,7 +18940,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.example-block-message[data-v-760572ce]{ font-size: 14px; line-height: 16px; padding: 20px;}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.example-block-message[data-v-760572ce] {\n    font-size: 14px;\n    line-height: 16px;\n    padding: 20px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18962,7 +18963,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n    /* This just matches what the <a> tags have on the default pagination */\n.pagination > li > button[data-v-3f69e1d8], .pagination > li > span[data-v-3f69e1d8] {\r\n        position: relative;\r\n        float: left;\r\n        padding: 12px;\r\n        margin-left: -1px;\r\n        font-size: 14px;\r\n        line-height: 1.42857143;\r\n        text-decoration: none;\r\n        background: none;\r\n        background-color: #fff;\r\n        border: 1px solid #ddd;\r\n        transition: all 300ms ease;\n}\n.pagination > .prev > span[data-v-3f69e1d8]{border-right: 1px solid #ddd;}\n.pagination > .next > span[data-v-3f69e1d8]{border-left: 1px solid #ddd;}\ndiv.ccm-page .pagination > li.active > span[data-v-3f69e1d8], .pagination > li.active > button[data-v-3f69e1d8] {\r\n        color: white;\r\n        background: var(--pagination-primary);\n}\n.pagination > li > button[data-v-3f69e1d8]:hover, .pagination > li > span[data-v-3f69e1d8]:hover,\r\n    .pagination > li > button[data-v-3f69e1d8]:focus, .pagination > li > span[data-v-3f69e1d8]:focus{\r\n        background: #333;\r\n        color: white;\n}\n.pagination > li.disabled > button[data-v-3f69e1d8]:hover, .pagination > li.disabled > span[data-v-3f69e1d8]:hover,\r\n    .pagination > li.disabled > button[data-v-3f69e1d8]:focus, .pagination > li.disabled > span[data-v-3f69e1d8]:focus{\r\n        background: #fff;\r\n        color: black;\n}\ndiv.ccm-page .pagination > li.prev button[data-v-3f69e1d8]{\r\n        border-left: 1px solid #d4efbd;\r\n        border-top-left-radius: 25px;\r\n        border-bottom-left-radius: 25px;\r\n        padding-left: 25px;\n}\ndiv.ccm-page .pagination > li.next button[data-v-3f69e1d8]{\r\n        border-right: 1px solid #d4efbd;\r\n        border-top-right-radius: 25px;\r\n        border-bottom-right-radius: 25px;\r\n        padding-right: 25px;\n}\n.sr[data-v-3f69e1d8]{\r\n        border: none;\r\n        clip: rect(0,0,0,0);\r\n        height: 1px;\r\n        margin: -1px;\r\n        overflow: hidden;\r\n        width: 1px;\r\n        position: absolute;\r\n        padding: 0;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* This just matches what the <a> tags have on the default pagination */\n.pagination > li > button[data-v-3f69e1d8],\n.pagination > li > span[data-v-3f69e1d8] {\n  position: relative;\n  float: left;\n  padding: 12px;\n  margin-left: -1px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  text-decoration: none;\n  background: none;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  transition: all 300ms ease;\n}\n.pagination > .prev > span[data-v-3f69e1d8] {\n  border-right: 1px solid #ddd;\n}\n.pagination > .next > span[data-v-3f69e1d8] {\n  border-left: 1px solid #ddd;\n}\ndiv.ccm-page .pagination > li.active > span[data-v-3f69e1d8],\n.pagination > li.active > button[data-v-3f69e1d8] {\n  color: white;\n  background: var(--pagination-primary);\n}\n.pagination > li > button[data-v-3f69e1d8]:hover,\n.pagination > li > span[data-v-3f69e1d8]:hover,\n.pagination > li > button[data-v-3f69e1d8]:focus,\n.pagination > li > span[data-v-3f69e1d8]:focus {\n  background: #333;\n  color: white;\n}\n.pagination > li.disabled > button[data-v-3f69e1d8]:hover,\n.pagination > li.disabled > span[data-v-3f69e1d8]:hover,\n.pagination > li.disabled > button[data-v-3f69e1d8]:focus,\n.pagination > li.disabled > span[data-v-3f69e1d8]:focus {\n  background: #fff;\n  color: black;\n}\ndiv.ccm-page .pagination > li.prev button[data-v-3f69e1d8] {\n  border-left: 1px solid #d4efbd;\n  border-top-left-radius: 25px;\n  border-bottom-left-radius: 25px;\n  padding-left: 25px;\n}\ndiv.ccm-page .pagination > li.next button[data-v-3f69e1d8] {\n  border-right: 1px solid #d4efbd;\n  border-top-right-radius: 25px;\n  border-bottom-right-radius: 25px;\n  padding-right: 25px;\n}\n.sr[data-v-3f69e1d8] {\n  border: none;\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  width: 1px;\n  position: absolute;\n  padding: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18985,7 +18986,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n:root{\r\n    --pagination-primary: #337ab7;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n:root {\n  --pagination-primary: #337ab7;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
