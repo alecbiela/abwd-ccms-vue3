@@ -41,13 +41,10 @@ class Controller extends Package
         if(is_null($pkg)) $pkg = Package::getByHandle('abwd_vue3');
 
         // Add block types
-        // $bt = BlockType::getByHandle('block_name');
-        // if (!is_object($bt)) {
-        //     $bt = BlockType::installBlockType('block_name', $pkg);
-        // }
-
-        // Add single pages
-        // $this->setupSinglePage($pkg, '/dashboard/example', 'Example Page Title', 'Example Page Description', array('exclude_nav'=>1))
+        $bt = BlockType::getByHandle('vue3_example_block');
+        if (!is_object($bt)) {
+            $bt = BlockType::installBlockType('vue3_example_block', $pkg);
+        }
     }
 
     /**
@@ -99,34 +96,5 @@ class Controller extends Package
         $router = $this->app->make('router');
         $list = new RouteList();
         $list->loadRoutes($router);
-
-    }
-
-    /**
-     * Adds a new single page OR updates one if it already exists at the given path
-     * @param Package $pkg The package object passed from installOrUpgrade
-     * @param String $cPath Relative page path (e.g. /dashboard/my_functionality/my_page)
-     * @param String $cDescription The page's description - will show in the CMS backend
-     * @param array $pageAttributes An array of page attributes to set on the single page ['attribute_handle'=>'value']
-     * @return SinglePage $sp The page object for the added/modified SinglePage
-     */
-    private function setupSinglePage($pkg, $cPath, $cName = '', $cDescription = '', $pageData = array()) {
-        $sp = SinglePage::add($cPath, $pkg);
-
-        // $sp is null if the SinglePage already exists
-        if (is_null($sp)) $sp = Page::getByPath($cPath);
-
-        // Set page title and description
-        $data = array();
-        if (!empty($cName)) $data['cName'] = $cName;
-        if (!empty($cDescription)) $data['cDescription'] = $cDescription;
-        if (!empty($data)) $sp->update($data);
-
-        // Set page attributes
-        foreach($pageData as $handle=>$value){
-            $sp->setAttribute($handle, $value);
-        }
-
-        return $sp;
     }
 }

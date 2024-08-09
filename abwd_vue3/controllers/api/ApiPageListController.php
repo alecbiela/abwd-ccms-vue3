@@ -1,6 +1,8 @@
 <?php
 namespace Concrete\Package\AbwdVue3\Controller\Api;
 
+defined('C5_EXECUTE') or die('Access Denied');
+
 use BlockType;
 use CollectionAttributeKey;
 use Concrete\Core\Attribute\Key\CollectionKey;

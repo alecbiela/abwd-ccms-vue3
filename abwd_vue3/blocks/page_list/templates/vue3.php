@@ -1,4 +1,10 @@
 <?php
+/**
+ * A custom template for the core PageList block.
+ * This loads all the props we need to pass to the custom <page-list> component
+ * Normally, we'd do this in the block's controller.php view() but since it's a core block
+ * we can't override its controller easily from inside a package.
+ */
 defined('C5_EXECUTE') or die('Access Denied.');
 $this->requireAsset('abwd-vue3-core');
 
